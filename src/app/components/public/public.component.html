@@ -1,0 +1,13 @@
+<div class="container">
+  <h1 style="text-align: center;">Posts</h1>
+
+  <div *ngIf="posts">
+    <div *ngFor="let post of posts" class="post">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.content }}</p>
+      <img *ngIf="post.downloadURL" [src]="post.downloadURL" alt="Post Image" class="post-image">
+      <p>Author Email: {{ post.authorEmail }}</p>
+      <p>Author: {{ post.authorName }}</p>
+    </div>
+  </div>
+</div>

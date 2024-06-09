@@ -1,0 +1,25 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.post {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.post h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.post p {
+  margin-bottom: 8px;
+}
+
+.post-image {
+  max-width: 400px;
+  margin-top: 16px;
+}

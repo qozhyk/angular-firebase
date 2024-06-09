@@ -1,0 +1,23 @@
+<form (ngSubmit)="createPost()" class="post-form">
+  <mat-form-field class="form-field">
+    <mat-label>Title:</mat-label>
+    <input matInput id="title" name="title" [(ngModel)]="postTitle" required>
+  </mat-form-field>
+
+  <mat-form-field class="form-field">
+    <mat-label>Content:</mat-label>
+    <textarea matInput id="content" name="content" [(ngModel)]="postContent" required></textarea>
+  </mat-form-field>
+
+<!--<input type="file" (change)="uploadFile($event)" class="file-input"> -->
+  <div class="download">
+    <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+    <input hidden (change)="uploadFile($event)" #fileInput type="file">
+  </div>
+
+  <div *ngIf="uploadInProgress" class="upload-status">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    <p>Uploading file, please wait...</p>
+  </div>
+  <button mat-raised-button type="submit" [disabled]="uploadInProgress" class="submit-button">Create Post</button>
+</form>

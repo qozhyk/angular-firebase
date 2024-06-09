@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "kajikov-29219": {
+      "hosting": {
+        "app": [
+          "kajikov-29219"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "kajikov-29219"
+  }
+}

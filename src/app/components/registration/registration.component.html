@@ -1,0 +1,32 @@
+<div class="register">
+  <div class="centered-content">
+    <h2>Registration</h2>
+  </div>
+
+  <div class="centered-content">
+    <mat-form-field>
+      <mat-label>Enter your email</mat-label>
+      <input matInput [(ngModel)]="email" type="email" placeholder="Email">
+    </mat-form-field>
+  </div>
+
+  <div class="centered-content">
+    <mat-form-field>
+      <mat-label>Enter your password</mat-label>
+      <input matInput [(ngModel)]="password" type="password" placeholder="Password">
+    </mat-form-field>
+  </div>
+
+  <div class="centered-content">
+    <button mat-raised-button color="primary" (click)="register()">
+      <mat-icon>key</mat-icon>
+      Register
+    </button>
+  </div>
+
+  <div *ngIf="errorMessage" class="centered-content" style="color: red;">
+    {{ errorMessage }}
+  </div>
+</div>
+
+

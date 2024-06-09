@@ -1,0 +1,36 @@
+<mat-toolbar>
+  <a mat-button routerLink="/">Kajikov</a>
+
+  <span class="nav-bar">
+    <!-- Ссылки для навигации -->
+  </span>
+
+
+
+  <ng-container *ngIf="currentUser">
+    <!-- Показать ссылку только если пользователь авторизован -->
+    <a mat-button routerLink="/create-post">Create Post</a>
+  </ng-container>
+
+  <!-- Кнопка с иконкой и выпадающим меню -->
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Кнопка с иконкой и выпадающим меню">
+    <mat-icon>person</mat-icon>
+  </button>
+  <!-- Выпадающее меню -->
+  <mat-menu #menu="matMenu">
+    <!-- Пункт меню с иконкой и email пользователя -->
+    <button mat-menu-item *ngIf="currentUser">
+      <mat-icon aria-hidden="false" aria-label="login icon" fontIcon="person"></mat-icon>
+      <span routerLink="/account">{{ currentUser.email }}</span>
+    </button>
+    <button mat-menu-item *ngIf="currentUser">
+      <mat-icon aria-hidden="false" aria-label="login icon" fontIcon="logout"></mat-icon>
+      <span (click)="logout()">Log Out</span>
+    </button>
+
+    <!-- Пункт меню для авторизации -->
+    <button mat-menu-item *ngIf="!currentUser" routerLink="/auth" aria-label="log in">
+      Login
+    </button>
+  </mat-menu>
+</mat-toolbar>

@@ -1,0 +1,45 @@
+.account-card {
+  max-width: 400px;
+  margin-bottom: 8px;
+}
+
+.avatar-container {
+  width: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.file-card {
+  max-width: 400px;
+  margin-bottom: 8px;
+}
+
+.file-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.file-item td {
+  border-bottom: 1px solid #ddd;
+}
+
+.file-item td:first-child {
+  width: 80%;
+}
+
+.file-item td:last-child {
+  width: 20%;
+  text-align: center;
+}

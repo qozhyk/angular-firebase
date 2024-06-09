@@ -1,0 +1,36 @@
+<div *ngIf="currentUser; else notLoggedIn" class="logged-in">
+  <h2>Welcome, {{ currentUser.email }}</h2>
+  <button mat-raised-button color="primary" (click)="logout()">
+    <mat-icon>exit_to_app</mat-icon>
+    Logout
+  </button>
+</div>
+
+<ng-template #notLoggedIn>
+  <div class="login-form">
+    <div class="centered-content">
+    <button mat-raised-button color="accent" (click)="signInWithGoogle()">
+      <mat-icon>login</mat-icon>
+      Login with Google
+    </button>
+  </div>
+    <p class="or-divider">Or login with email:</p>
+    <mat-form-field class="form-field">
+      <mat-label>Email:</mat-label>
+      <input matInput [(ngModel)]="email" type="email" placeholder="Email">
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label>Password:</mat-label>
+      <input matInput [(ngModel)]="password" type="password" placeholder="Password">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="login()">
+      <mat-icon>login</mat-icon>
+      Login
+    </button>
+    <p>Don't have an account? <a routerLink="/registration">Register here</a></p>
+    <div *ngIf="errorMessage" class="error-message">
+      <mat-icon>error_outline</mat-icon>
+      {{ errorMessage }}
+    </div>
+  </div>
+</ng-template>

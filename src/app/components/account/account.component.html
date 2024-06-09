@@ -1,0 +1,28 @@
+<mat-card class="account-card">
+  <mat-card-header>
+    <div class="avatar-container" *ngIf="currentUser && currentUser.photoURL">
+      <img [src]="currentUser.photoURL" alt="User Avatar" class="avatar">
+    </div>
+    <mat-card-title-group class="info">
+      <mat-card-title>{{ currentUser.displayName || 'User' }}</mat-card-title>
+      <mat-card-subtitle>{{ currentUser.email }}</mat-card-subtitle>
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    <br>
+
+    <h2>Загруженные файлы:</h2>
+    <table *ngIf="uploadedFiles | async as files" class="file-table">
+      <tr>
+        <th>Title</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let file of files" class="file-item">
+        <td><a [href]="file.downloadURL" target="_blank">{{ file.title }}</a></td>
+        <td><button mat-icon-button color="warn" (click)="deleteFile(file)">
+          <mat-icon>delete</mat-icon>
+        </button></td>
+      </tr>
+    </table>
+  </mat-card-content>
+</mat-card>
